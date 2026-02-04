@@ -1,0 +1,33 @@
+{
+  "name": "devcontainer-env",
+  "build": {
+    "dockerfile": "./Dockerfile",
+    "args": {
+      "USERNAME": "dev",
+      "USER_UID": "1000",
+      "USER_GID": "1000",
+  "BASE_IMAGE": "ubuntu:22.04"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
+      ],
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+      }
+    }
+  },
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/home/dev/workspace,type=bind,consistency=cached"
+  ],
+  "containerEnv": {
+    "DEBIAN_FRONTEND": "noninteractive"
+  },
+  "postCreateCommand": "bash .decontainer/post-create.sh || true",
+  "workspaceFolder": "/home/dev/workspace",
+  "remoteUser": "dev"
+}
