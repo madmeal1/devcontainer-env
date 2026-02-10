@@ -25,6 +25,7 @@ RUN apt-get update \
        python3 \
        python3-venv \
        python3-pip \
+       docker.io jq \
     && rm -rf /var/lib/apt/lists/*
 
 # Create a non-root user to match host UID/GID for file permission parity

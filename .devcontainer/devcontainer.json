@@ -22,7 +22,9 @@
     }
   },
   "mounts": [
-    "source=${localWorkspaceFolder},target=/home/dev/workspace,type=bind,consistency=cached"
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
+    "source=${localWorkspaceFolder},target=/home/dev/workspace,type=bind,consistency=cached",
+    "source=commandhistory,target=/commandhistory,type=volume"
   ],
   "containerEnv": {
     "DEBIAN_FRONTEND": "noninteractive"
