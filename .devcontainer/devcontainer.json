@@ -29,7 +29,7 @@
   "containerEnv": {
     "DEBIAN_FRONTEND": "noninteractive"
   },
-  "postCreateCommand": "bash .decontainer/post-create.sh || true",
+  "postCreateCommand": "bash .devcontainer/post-create.sh || true",
   "workspaceFolder": "/home/dev/workspace",
   "remoteUser": "dev"
 }
